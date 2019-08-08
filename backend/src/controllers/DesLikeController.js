@@ -8,11 +8,13 @@ module.exports = {
     const loggedDev = await Dev.findById(user);
     const targetDev = await Dev.findById(devId);
 
+    return res.json({ loggedDev, targetDev });
+
     if (!targetDev) {
       return res.status(400).json({ error: 'Dev not Exists' });
     }
 
-    loggedDev.deslikes.push(targetDev._id);
+    loggedDev.dislikes.push(targetDev._id);
 
     await loggedDev.save();
 

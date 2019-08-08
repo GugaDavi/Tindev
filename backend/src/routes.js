@@ -9,6 +9,6 @@ const routes = Router();
 routes.get('/devs', DevController.index);
 routes.post('/devs', DevController.store);
 routes.post('/devs/:devId/likes', LikeController.store);
-routes.post('/devs/:devId/deslikes', DesLikeController.store);
+routes.post('/devs/:devId/dislikes', DesLikeController.store);
 
 module.exports = routes;
