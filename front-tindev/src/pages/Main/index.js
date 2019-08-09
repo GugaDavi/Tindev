@@ -29,12 +29,16 @@ export default function Main({ match }) {
     await api.post(`devs/${targetID}/likes`, null, {
       headers: { user: id },
     });
+
+    setUsers(users.filter(user => user._id !== targetID));
   }
 
   async function handleDisLike(targetID) {
     await api.post(`devs/${targetID}/dislikes`, null, {
       headers: { user: id },
     });
+
+    setUsers(users.filter(user => user._id !== targetID));
   }
 
   return (
